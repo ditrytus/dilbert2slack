@@ -11,5 +11,9 @@
     "slack"
   ],
   "author": "Jakub Gruszecki",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^3.14.2",
+    "cheerio": "^1.0.0-rc.2"
+  }
 }
