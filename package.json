@@ -1,0 +1,15 @@
+{
+  "name": "dilbert2slack",
+  "version": "0.1.0",
+  "description": "App that will post Dilbert daily strips to Slack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dilbert",
+    "slack"
+  ],
+  "author": "Jakub Gruszecki",
+  "license": "ISC"
+}
