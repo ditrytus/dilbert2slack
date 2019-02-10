@@ -1,5 +1,5 @@
 var IncomingWebhook = require('@slack/client').IncomingWebhook,
-    http = require('http'),
+    https = require('https'),
     cheerio = require('cheerio');
 
 var url = process.env.SLACK_WEBHOOK_URL || '';
@@ -8,7 +8,11 @@ var webhook = new IncomingWebhook(url);
 
 var currentISODate = new Date().toISOString().slice(0, 10);
 
-http.get("http://dilbert.com/strip/" + currentISODate, (resp) => {
+var url = "https://dilbert.com/strip/" + currentISODate;
+
+console.log(url);
+
+https.get(url, (resp) => {
     let data = '';
 
     resp.on('data', (chunk) => {
@@ -17,7 +21,7 @@ http.get("http://dilbert.com/strip/" + currentISODate, (resp) => {
 
     resp.on('end', () => {
         var dom = cheerio.load(data);
-        var imgUrl = dom("img.img-comic").attr('src');
+        var imgUrl = "https:" + dom("img.img-comic").attr('src');
 
         console.log(imgUrl);
 
